@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class Personne
 {
-	public String numeroINSEE;
+	public static String numeroINSEE;
 	
 	public String nom;
 	
