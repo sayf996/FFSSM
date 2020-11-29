@@ -47,7 +47,7 @@ public Licence getLicence(LocalDate date) {
             }
                 
         }
-        // Si le plongeur n'a pas une licence valide à la LocalDate date, on retourne null
+        
         return currentLicence;
     }
 

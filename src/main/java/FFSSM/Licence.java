@@ -57,7 +57,7 @@ public class Licence {
         
         LocalDate expiry = delivrance.plusYears(1);
         
-        return d.compareTo(expiry) < 0;
+        return d.isBefore(expiry);
         
     }
  

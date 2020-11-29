@@ -28,18 +28,18 @@ public class Moniteur extends Plongeur {
             return myJobs;
     }
     public Optional<Club> employeurActuel() {
-          Optional<Club> opt;
+          Optional<Club> optional;
         
         if (!myJobs.isEmpty() && !myJobs.get(myJobs.size()).estTerminee()) {
             
             Club a = myJobs.get(myJobs.size()).getEmployeur();
-            opt = Optional.ofNullable(a);
+            optional = Optional.ofNullable(a);
         }
         else {           
             Club a = null;
-            opt = Optional.ofNullable(a);
+            optional = Optional.ofNullable(a);
         }        
-        return opt;
+        return optional;
     }
     
     /**

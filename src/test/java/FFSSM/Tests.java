@@ -20,9 +20,10 @@ import org.junit.jupiter.api.Test;
 public class Tests {
     
     LocalDate dateNeSaif, dateNeJack, delivrance, datePlongee;
-    Site albi;   
-    Licence licenceSaif;
+    Site seaSide;   
+    Licence licenceJack, licenceSaif;
     Plongeur jack;
+    Personne jack1; 
     Plongee plongee1;
     Moniteur saif, presidentAlbi;
     Club albiClub;
@@ -45,7 +46,7 @@ public class Tests {
         datePlongee = LocalDate.of(2020, 11, 28);
         albiClub = new Club(presidentAlbi, "Albi Dive Club", "077234823");
         
-        plongee1 = new Plongee(albi, saif, datePlongee, 10, 3);
+        plongee1 = new Plongee(seaSide, saif, datePlongee, 10, 3);
         
         
         delivrance = LocalDate.of(2020, 1, 26);
@@ -117,6 +118,7 @@ public class Tests {
         job.terminer(LocalDate.now());
         assertTrue(job.estTerminee());
         assertEquals(LocalDate.now(), job.getFin());
+        
     }
     @Test
     public void testEstValide() {
@@ -124,8 +126,10 @@ public class Tests {
          assertTrue(licenceSaif.estValide(delivrance.plusWeeks(0))); 
          assertFalse(licenceSaif.estValide(delivrance.plusMonths(12))); //After one year Licence expired
     }
-
-
- 
+    @Test
+    public void testGetDate(){
+        plongee1 = new Plongee (seaSide, saif, datePlongee, 5, 3);
+        assertEquals(datePlongee, plongee1.getDate());
+    }
 }
 
